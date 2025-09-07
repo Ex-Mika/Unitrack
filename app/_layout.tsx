@@ -14,9 +14,13 @@ export default function RootLayout() {
 
   useEffect(() => {
     // Check if user is logged in on app start
-    if (!global.currentUser) {
-      router.replace('/login');
-    }
+    const timeoutId = setTimeout(() => {
+      if (!global.currentUser) {
+        router.replace('/login');
+      }
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
