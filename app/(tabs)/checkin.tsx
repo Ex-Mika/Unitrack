@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { router } from 'expo-router';
 import {
   View,
   Text,
@@ -30,6 +31,13 @@ export default function CheckInScreen() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  // Redirect students away from check-in page
+  useEffect(() => {
+    if (!global.currentUser || global.currentUser.role === 'student') {
+      router.replace('/(tabs)');
+    }
+  }, []);
 
   // Update time every minute
   useEffect(() => {

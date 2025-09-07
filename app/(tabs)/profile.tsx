@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { router } from 'expo-router';
 import {
   View,
   Text,
@@ -63,8 +64,8 @@ export default function ProfileScreen() {
           text: 'Log Out',
           style: 'destructive',
           onPress: () => {
-            // Handle logout logic
-            Alert.alert('Logged Out', 'You have been successfully logged out.');
+            global.currentUser = null;
+            router.replace('/login');
           },
         },
       ]
