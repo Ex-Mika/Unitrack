@@ -12,18 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
-import { 
-  Users, 
-  Plus, 
-  Edit3, 
-  Trash2, 
-  LogOut, 
-  Search,
-  UserCheck,
-  UserX,
-  GraduationCap,
-  Shield
-} from 'lucide-react-native';
+import { Users, Plus, CreditCard as Edit3, Trash2, LogOut, Search, UserCheck, UserX, GraduationCap, Shield } from 'lucide-react-native';
 
 interface User {
   id: string;
